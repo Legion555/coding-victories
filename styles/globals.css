@@ -4,8 +4,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
-p, a, h1, button {
-  font-family: 'Raleway', sans-serif;
+h1, button {
+  font-family: 'Century Gothic', sans-serif;
+}
+
+p, a {
+  font-family: 'PT Serif', serif;
 }
 
 .authentication {

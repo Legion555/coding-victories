@@ -1,0 +1,13 @@
+{
+    "username": "legion",
+    "email": "legion@gmail.com",
+    "password": "legion123",
+    "victories": [
+        {
+            "_id": "1234567",
+            "title": "First victory",
+            "description": "This was my first victory",
+            "date_created": "2021-01-01"
+        }
+    ]
+}

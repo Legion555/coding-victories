@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 //components
 import Authentication from '../components/Authentication'
 import Main from '../components/Main'
@@ -6,6 +7,8 @@ import Main from '../components/Main'
 import {useSelector} from 'react-redux'
 
 export default function Home() {
+  const router = useRouter()
+
   const isLoggedIn = useSelector(state => state.isLoggedIn);
 
   return (

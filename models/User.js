@@ -18,6 +18,9 @@ const UserSchema = new mongoose.Schema({
     dateCreated: {
         type: Date,
         default: Date.now()
+    },
+    victories: {
+        type: Array
     }
 })
 

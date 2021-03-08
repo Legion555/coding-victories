@@ -15,7 +15,7 @@ export default async function handler(req, res) {
                 
         //Create and assigning token
         const jwt = require('jsonwebtoken');
-        const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
+        const token = jwt.sign({_id: user._id}, process.env.NEXT_PUBLIC_MONGODB_URI);
         res.send({status: 'success', userData: user, authToken: token});
     } catch (error) {
         res.status(400).json({ success: false })
