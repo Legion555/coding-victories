@@ -8,9 +8,9 @@ import {useDispatch} from 'react-redux'
 export default function Login({setView}) {
     const dispatch = useDispatch();
 
-    const [email, setEmail] = useState('legion@gmail.com')
+    const [email, setEmail] = useState('')
     const [emailError, setEmailError] = useState(null)
-    const [password, setPassword] = useState('legion123')
+    const [password, setPassword] = useState('')
     const [passwordError, setPasswordError] = useState(null)
 
     const login = (e) => {
