@@ -13,3 +13,10 @@ export const updateIsLoggedIn = data => {
         payload: data
     }
 }
+//victories
+export const updateVictories = data => {
+    return {
+        type: 'UPDATE_VICTORIES',
+        payload: data
+    }
+}

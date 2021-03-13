@@ -7,7 +7,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {updateUserData} from '../../actions'
 
 
-export default function AddVictory({setFunctionView}) {
+export default function CreateVictory({setFunctionView}) {
     const dispatch = useDispatch();
     const userData = useSelector(state => state.userData);
 
@@ -31,7 +31,9 @@ export default function AddVictory({setFunctionView}) {
             _id: uid(),
             title: title,
             description: description,
-            date_created: Date.now()
+            date_created: Date.now(),
+            authorId: userData._id,
+            author: userData.username
         }
         axios.post('/api/victories/create', payload)
         .then(result => {

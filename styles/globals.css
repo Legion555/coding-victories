@@ -2,16 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Rubik&display=swap');
 
 h1, button {
-  font-family: 'Century Gothic', sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 p, a {
-  font-family: 'PT Serif', serif;
+  font-family: 'Karla', sans-serif;
 }
 
 .authentication {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='1080' preserveAspectRatio='none' viewBox='0 0 1440 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1030%26quot%3b)' fill='none'%3e%3crect width='1440' height='1080' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M-129.52 421.07C41.67 412.1 200.43 74.68 480.48 107.87 760.53 141.06 624.65 883.04 785.48 1080.8' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-101.66 567.33C56.96 563.5 161.73 325.42 491.08 340.53 820.43 355.64 851.88 1052.26 1083.82 1145.11' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-200.33 148.97C-26.23 182.33 20.35 506.72 325.96 624.17 631.56 741.62 465.25 1097.58 589.1 1193.87' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-287.45 965.64C-118.08 962.31 101.3 735.85 351.09 738.84 600.88 741.83 536.41 1181.22 670.36 1250.37' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-13.27 599.3C151.93 594.64 269.98 342.16 599.34 350.9 928.69 359.64 984.67 1010.84 1211.94 1084.72' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1030'%3e%3crect width='1440' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+}
+
+/* Affect other elements */
+.victory-card:hover .icon-delete {
+  display: block;
 }

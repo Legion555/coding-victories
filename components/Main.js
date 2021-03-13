@@ -3,19 +3,20 @@ import { useState } from "react"
 import {useSelector} from 'react-redux'
 //components
 import Nav from './Nav'
-import DefaultView from "./DefaultView";
+import Index from "./Default/Index";
 import Profile from "./Profile/Profile";
 
-export default function Home() {
+export default function Home({setViewMain}) {
     const userData = useSelector(state => state.userData);
     const [view, setView] = useState('default');
 
     return (
         <div className="w-full h-full">
-            <Nav setView={setView} />
-            {/* Hero */}
+
+            <Nav setView={setView} setViewMain={setViewMain} />
+
             {view === 'default' &&
-                <DefaultView />
+                <Index setView={setView} setViewMain={setViewMain} />
             }
             {view === 'profile' &&
                 <Profile />

@@ -40,8 +40,13 @@ export default function Login({setView}) {
                     setPassword('')
                     break;            
                 default:
+                    //retrive and set userData
                     const userData = result.data.userData;
                     userData.authToken = result.data.authToken;
+                    //set cookies
+                    localStorage.setItem('loginEmail', email);
+                    localStorage.setItem('loginPassword', password);
+                    //set userData redux
                     dispatch(updateUserData(result.data.userData))
                     dispatch(updateIsLoggedIn(true))
                     break;

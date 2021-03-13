@@ -11,7 +11,9 @@ export default async function handler(req, res) {
                     _id: req.body._id,
                     title: req.body.title,
                     description: req.body.description,
-                    date_created: req.body.date_created
+                    date_created: req.body.date_created,
+                    authorId: req.body.authorId,
+                    author: req.body.author
                     }
                 }
             },
@@ -19,6 +21,7 @@ export default async function handler(req, res) {
             (err, result) => {
                 if (err) {
                     res.send(err);
+                    res.end();
                 } else {
                     res.send(result);
                     res.end();
