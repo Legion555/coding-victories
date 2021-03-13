@@ -11,6 +11,8 @@ export default function Home() {
 
   const isLoggedIn = useSelector(state => state.isLoggedIn);
 
+  console.log(process.env.NODE_ENV)
+
   return (
     <div>
       <Head>
