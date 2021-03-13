@@ -1,10 +1,9 @@
 import mongoose from 'mongoose'
 
 async function dbConnect() {
-    if (process.env.NODE_ENV == 'development') {
-        let mongoDBUri = process.env.NEXT_PUBLIC_MONGODB_URI
-    } else {
-        let mongoDBUri = process.env.MONGODB_URI
+    let mongoDBUri = process.env.NEXT_PUBLIC_MONGODB_URI
+    if (process.env.NODE_ENV == 'production') {
+        mongoDBUri = process.env.MONGODB_URI
     }
 
     if (mongoose.connection.readyState >= 1) {

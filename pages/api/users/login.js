@@ -2,10 +2,9 @@ import dbConnect from '../../../utils/dbConnect.js'
 import User from '../../../models/User'
 
 export default async function handler(req, res) {
-    if (process.env.NODE_ENV == 'development') {
-        let tokenSecret = process.env.NEXT_PUBLIC_TOKEN_SECRET
-    } else {
-        let tokenSecret = process.env.TOKEN_SECRET
+    let tokenSecret = process.env.NEXT_PUBLIC_TOKEN_SECRET
+    if (process.env.NODE_ENV == 'production') {
+        tokenSecret = process.env.TOKEN_SECRET
     }
 
     await dbConnect()
@@ -21,7 +20,7 @@ export default async function handler(req, res) {
                 
         //Create and assigning token
         const jwt = require('jsonwebtoken');
-        const token = jwt.sign({_id: user._id}, process.env.NEXT_PUBLIC_MONGODB_URI);
+        const token = jwt.sign({_id: user._id}, tokenSecret);
         res.send({status: 'success', userData: user, authToken: token});
     } catch (error) {
         res.status(400).json({ success: false })
