@@ -2,6 +2,12 @@ import dbConnect from '../../../utils/dbConnect.js'
 import User from '../../../models/User'
 
 export default async function handler(req, res) {
+    if (process.env.NODE_ENV == 'development') {
+        let tokenSecret = process.env.NEXT_PUBLIC_TOKEN_SECRET
+    } else {
+        let tokenSecret = process.env.TOKEN_SECRET
+    }
+
     await dbConnect()
     try {
         //Check if email exists
