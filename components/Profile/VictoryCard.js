@@ -28,7 +28,7 @@ export default function VictoryCard({victoryData, colors}) {
 
     return (
         <div className="victory-card w-80 m-8 relative
-            transform hover:scale-105 transition ease-out duration-700" key={victoryData._id}>
+            transform hover:scale-105 transition ease-out duration-700 animate-fadeIn" key={victoryData._id}>
             {view === 'default' &&
                 <div className="h-32">
                     <div className={`w-full h-full absolute top-0 left-0 rounded shadow bg-${colors[0]}-400

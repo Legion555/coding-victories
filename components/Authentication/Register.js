@@ -58,9 +58,9 @@ export default function Register({setView}) {
                     type="text" required placeholder={passwordError === null ? "Password" : passwordError}
                     value={password} onChange={(e) => setPassword(e.target.value)} />
 
-                <button className="w-full p-4 text-4xl text-gray-100 bg-blue-800" onClick={(e) => register(e)}>Sign up</button>
+                <button className="w-full p-4 text-4xl text-gray-100 bg-blue-800 hover:bg-blue-600 transition ease-in-out duration-150" onClick={(e) => register(e)}>Sign up</button>
             </form>
-            <p className="text-2xl">Don't have an account? <span className="font-bold" onClick={() => setView('login')}>Sign up</span></p>
+            <p className="text-2xl">Don't have an account? <span className="font-bold cursor-pointer" onClick={() => setView('login')}>Sign up</span></p>
         </div>
     )
 }

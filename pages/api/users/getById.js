@@ -4,12 +4,12 @@ import User from '../../../models/User'
 export default async function handler(req, res) {
     await dbConnect()
     try {
-        User.find( {_id: req.query._id}, { albums: 1 },
+        User.find( {_id: req.body._id},
             function(err, result) {
                 if (err) {
                   res.send(err);
                 } else {
-                  res.send(result[0].albums);
+                  res.send(result);
                 }
               })
     } catch (error) {

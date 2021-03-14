@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 //components
-import Authentication from '../components/Authentication';
+import Authentication from '../components/Authentication/';
 import Main from '../components/Main';
 //redux
 import {updateUserData, updateIsLoggedIn, updateVictories} from '../actions';

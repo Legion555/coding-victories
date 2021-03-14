@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useState } from "react"
 //redux
-import {updateUserData, updateIsLoggedIn} from '../actions'
+import {updateUserData, updateIsLoggedIn} from '../../actions'
 import {useDispatch} from 'react-redux'
 
 
@@ -67,9 +67,9 @@ export default function Login({setView}) {
                     type="text" placeholder={passwordError === null ? "Password" : passwordError}
                     value={password} onChange={(e) => setPassword(e.target.value)} />
 
-                <button className="w-full p-4 text-4xl text-gray-100 bg-blue-800" onClick={(e) => login(e)}>Sign in</button>
+                <button className="w-full p-4 text-4xl text-gray-100 bg-blue-800 hover:bg-blue-600 transition ease-in-out duration-150" onClick={(e) => login(e)}>Sign in</button>
             </form>
-            <p className="text-2xl">Don't have an account? <span className="font-bold" onClick={() => setView('register')}>Sign up</span></p>
+            <p className="text-2xl">Don't have an account? <span className="font-bold cursor-pointer" onClick={() => setView('register')}>Sign up</span></p>
         </div>
     )
 }

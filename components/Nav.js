@@ -22,9 +22,9 @@ export default function Nav({setView, setViewMain}) {
 
     return (
         <div className="w-full h-20 px-8 fixed top-0 flex justify-between items-center text-gray-100 bg-gray-800">
-            <h1 className="text-2xl cursor-pointer" onClick={() => setView('default')}>
-                Coding<GiTrophyCup className="inline text-yellow-600" />Victories</h1>
-            <div>
+            <div className="flex items-center">
+                <h1 className="mr-12 text-2xl cursor-pointer" onClick={() => setView('default')}>
+                    Coding<GiTrophyCup className="inline text-yellow-600" />Victories</h1>
                 <button onClick={() => setView('default')}>View victories</button>
             </div>
             {userData ?

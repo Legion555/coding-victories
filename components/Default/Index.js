@@ -13,7 +13,8 @@ export default function Index({setView, setViewMain}) {
     return (
         <div className="w-full h-screen">
             {/* Hero */}
-            <div className="w-full flex justify-center items-center bg-gray-800" style={{height: '500px', backgroundImage: "url('/assets/hero_bg.jpg')", backgroundPosition: 'bottom'}}>
+            <div className="w-full flex justify-center items-center mb-8 bg-gray-800"
+                style={{height: '500px', backgroundImage: "url('/assets/hero_bg.jpg')", backgroundPosition: 'bottom'}}>
                 <div className="p-4 text-center">
                     <div className="w-max mb-8">
                         <div className="w-full h-8 relative top-24 bg-blue-800" />

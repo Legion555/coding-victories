@@ -9,9 +9,9 @@ export default function ListVictories({setFunctionView}) {
     const userData = useSelector(state => state.userData);
 
     const colorGen = () => {
-        let options = ['yellow', 'blue', 'green'];
-        let colorArr = [options[Math.floor(Math.random() * 3)]];
-        colorArr.push(options[Math.floor(Math.random() * 3)]);
+        let options = ['yellow', 'blue', 'green', 'red', 'purple'];
+        let colorArr = [options[Math.floor(Math.random() * 4)]];
+        colorArr.push(options[Math.floor(Math.random() * 4)]);
         return colorArr;
     }
 
