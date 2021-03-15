@@ -3,6 +3,13 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      width: {
+        '500': '500px'
+      },
+      height: {
+        '320': '320px',
+        '500': '500px'
+      },
       animation: {
         lighthouse: 'lighthouse 5s ease-in-out infinite',
         fadeIn: 'fadeIn 0.5s ease-in forwards'

@@ -1,4 +1,4 @@
-import dbConnect from '../../../utils/dbConnect.js'
+import dbConnect from '../utils/dbConnect.js'
 import User from '../../../models/User'
 
 export default async function handler(req, res) {

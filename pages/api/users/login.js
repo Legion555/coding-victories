@@ -1,12 +1,7 @@
-import dbConnect from '../../../utils/dbConnect.js'
+import dbConnect from '../utils/dbConnect.js'
 import User from '../../../models/User'
 
 export default async function handler(req, res) {
-    let tokenSecret = process.env.NEXT_PUBLIC_TOKEN_SECRET
-    if (process.env.NODE_ENV == 'production') {
-        tokenSecret = process.env.TOKEN_SECRET
-    }
-
     await dbConnect()
     try {
         //Check if email exists
@@ -20,7 +15,7 @@ export default async function handler(req, res) {
                 
         //Create and assigning token
         const jwt = require('jsonwebtoken');
-        const token = jwt.sign({_id: user._id}, tokenSecret);
+        const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
         res.send({status: 'success', userData: user, authToken: token});
     } catch (error) {
         res.status(400).json({ success: false })

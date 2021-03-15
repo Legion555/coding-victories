@@ -1,4 +1,4 @@
-import dbConnect from '../../../utils/dbConnect.js'
+import dbConnect from '../utils/dbConnect.js'
 import User from '../../../models/User'
 
 export default async function handler(req, res) {
@@ -13,7 +13,8 @@ export default async function handler(req, res) {
                     description: req.body.description,
                     date_created: req.body.date_created,
                     authorId: req.body.authorId,
-                    author: req.body.author
+                    author: req.body.author,
+                    color: req.body.color
                     }
                 }
             },

@@ -42,9 +42,9 @@ export default function Register({setView}) {
     }
 
     return (
-        <div className="w-full h-full p-16 text-center text-gray-700 bg-gray-100">
-            <h1 className="mb-8 text-6xl">Coding Victories</h1>
-            <p className="mb-16 text-4xl">Sign up for free</p>
+        <div className="w-full h-full p-8 md:p-16 text-center text-gray-700 bg-gray-100">
+            <h1 className="mb-8 text-3xl md:text-6xl">Coding Victories</h1>
+            <p className="mb-16 text-2xl md:text-4xl">Sign up for free</p>
             <form className="mb-16">
                 <input className={`w-full mb-8 p-4 text-xl ${usernameError !== null && 'border-2 border-red-500'}`}
                     type="text" required placeholder={usernameError === null ? "Username" : usernameError}

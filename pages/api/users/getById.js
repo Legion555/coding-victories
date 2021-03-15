@@ -1,11 +1,11 @@
-import dbConnect from '../../../utils/dbConnect.js'
+import dbConnect from '../utils/dbConnect.js'
 import User from '../../../models/User'
 
 export default async function handler(req, res) {
     await dbConnect()
     try {
         User.find( {_id: req.body._id},
-            function(err, result) {
+            (err, result) => {
                 if (err) {
                   res.send(err);
                 } else {
@@ -14,6 +14,6 @@ export default async function handler(req, res) {
               })
     } catch (error) {
         res.status(400).json({ success: false })
-        res.end();
+        return resolve();
     }
 }

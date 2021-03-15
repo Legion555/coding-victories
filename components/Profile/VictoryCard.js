@@ -7,7 +7,7 @@ import {updateUserData} from '../../actions'
 import {AiOutlineArrowRight} from 'react-icons/ai';
 import {FaTrashAlt} from 'react-icons/fa';
 
-export default function VictoryCard({victoryData, colors}) {
+export default function VictoryCard({victoryData}) {
     const dispatch = useDispatch();
     const userData = useSelector(state => state.userData);
 
@@ -27,16 +27,16 @@ export default function VictoryCard({victoryData, colors}) {
     }
 
     return (
-        <div className="victory-card w-80 m-8 relative
+        <div className="victory-card w-80 mx-auto my-16 relative
             transform hover:scale-105 transition ease-out duration-700 animate-fadeIn" key={victoryData._id}>
             {view === 'default' &&
-                <div className="h-32">
-                    <div className={`w-full h-full absolute top-0 left-0 rounded shadow bg-${colors[0]}-400
+                <div className="relative">
+                    <div className={`w-full h-full absolute top-0 left-0 rounded shadow bg-${victoryData.color}-300
                         transform rotate-6`} />
-                    <div className={`w-full h-full absolute top-0 left-0 rounded shadow bg-${colors[1]}-400
+                    <div className={`w-full h-full absolute top-0 left-0 rounded shadow bg-${victoryData.color}-600
                         transform -rotate-6`} />
                     <div className="w-full h-full p-2 flex flex-col justify-between relative rounded shadow bg-gray-100">
-                        <div>
+                        <div className="mb-4">
                             <h1 className="text-xl">{victoryData.title}</h1>
                             <p className="text">{victoryData.description}</p>
                         </div>
@@ -48,9 +48,9 @@ export default function VictoryCard({victoryData, colors}) {
             }
             {view === 'delete' &&
                 <div className="h-32">
-                    <div className={`w-full h-full absolute top-0 left-0 rounded shadow bg-${colors[0]}-400
+                    <div className={`w-full h-full absolute top-0 left-0 rounded shadow bg-${victoryData.color}-300
                         transform rotate-6`} />
-                    <div className={`w-full h-full absolute top-0 left-0 rounded shadow bg-${colors[1]}-400
+                    <div className={`w-full h-full absolute top-0 left-0 rounded shadow bg-${victoryData.color}-600
                         transform -rotate-6`} />
                     <div className="w-full h-full p-4 relative rounded shadow bg-gray-100">
                         <h1 className="mb-4 text-xl text-center">Are you sure?</h1>

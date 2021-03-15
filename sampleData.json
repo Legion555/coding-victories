@@ -3,6 +3,9 @@
     "username": "legion",
     "email": "legion@gmail.com",
     "password": "legion123",
+    "likes": [
+        "victoryId"
+    ],
     "victories": [
         {
             "_id": "1234567",
@@ -10,7 +13,9 @@
             "description": "This was my first victory",
             "date_created": "2021-01-01",
             "authorId": "1234567",
-            "author": "username"
+            "author": "username",
+            "color": "blue",
+            "likes": 0
         }
     ]
 }

@@ -13,13 +13,13 @@ export default function Index({setView, setViewMain}) {
     return (
         <div className="w-full h-screen">
             {/* Hero */}
-            <div className="w-full flex justify-center items-center mb-8 bg-gray-800"
-                style={{height: '500px', backgroundImage: "url('/assets/hero_bg.jpg')", backgroundPosition: 'bottom'}}>
+            <div className="w-full h-320 md:h-500 flex justify-center items-center mb-8 bg-gray-800"
+                style={{backgroundImage: "url('/assets/hero_bg.jpg')", backgroundPosition: 'bottom'}}>
                 <div className="p-4 text-center">
                     <div className="w-max mb-8">
-                        <div className="w-full h-8 relative top-24 bg-blue-800" />
-                        <div className="w-full h-8 relative top-32 bg-green-800" />
-                        <h1 className="relative text-6xl text-yellow-200">Victories are meant<br/>to be celebrated</h1>
+                        <div className="w-full h-4 md:h-8 relative top-12 md:top-24 bg-blue-800" />
+                        <div className="w-full h-4 md:h-8 relative top-16 md:top-32 bg-green-800" />
+                        <h1 className="relative text-3xl md:text-6xl text-yellow-200">Victories are meant<br/>to be celebrated</h1>
                     </div>
                     <button className="p-4 text-3xl rounded shadow text-gray-100 bg-yellow-600"
                         onClick={isLoggedIn ? () => setView('profile')  : () => setViewMain(false) } >Share yours today</button>

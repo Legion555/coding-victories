@@ -55,9 +55,9 @@ export default function Login({setView}) {
     }
 
     return (
-        <div className="w-full h-full p-16 text-center text-gray-700 bg-gray-100">
-            <h1 className="mb-8 text-6xl">Coding Victories</h1>
-            <p className="mb-16 text-4xl text-gray-500">Sign in to continue</p>
+        <div className="w-full h-full p-8 md:p-16 text-center text-gray-700 bg-gray-100">
+            <h1 className="mb-8 text-3xl md:text-6xl">Coding Victories</h1>
+            <p className="mb-16 text-2xl md:text-4xl text-gray-500">Sign in to continue</p>
             <form className="mb-16">
                 <input className={`w-full mb-8 p-4 text-xl ${emailError !== null && 'border-2 border-red-500'}`}
                     type="text" placeholder={emailError === null ? "Email" : emailError}
