@@ -33,7 +33,6 @@ export default function VictoryCard({victoryData}) {
                 let tempUserData = userData;
                 let tempLikes = tempUserData.likes.filter(like => like._id !== victoryData._id);
                 tempUserData.likes = tempLikes;
-                console.log(tempUserData)
                 dispatch(updateUserData(tempUserData));
                 //change like status
                 setLikeStatus(false);
@@ -62,21 +61,40 @@ export default function VictoryCard({victoryData}) {
     const evalLike = () => {
         userData.likes.forEach(like => {
             if(like._id === victoryData._id) {
-                console.log(likeStatus)
                 return setLikeStatus(true);
             }
             return null;
         })
     }
-    
+
+    const parseColor = () => {
+        let color;
+        switch (victoryData.color) {
+            case 'blue':
+                color = 'rgb(147,197,253)';
+                break;
+            case 'green':
+                color = 'rgb(112,231,183)';
+                break;
+            case 'red':
+                color = 'rgb(252,165,165)';
+                break;
+            case 'yellow':
+                color = 'rgb(252,211,79)';
+                break;
+            default:
+                break;
+        }
+        return color;
+    }
 
     return (
         <div className="w-10/12 md:w-5/12 lg:w-4/12 xl:w-3/12 h-64 m-4
             relative rounded-xl shadow text-gray-800">
-            <div className={`w-full h-full absolute top-2 left-2 rounded-xl shadow bg-${victoryData.color}-600`} />
+            <div className={`w-full h-full absolute top-2 left-2 rounded-xl shadow`} style={{backgroundColor: victoryData.color}} />
             <div className="w-full h-full relative flex flex-col justify-between rounded-xl bg-gray-100">
                 <div>
-                    <h1 className={`p-2 text-2xl rounded-xl border-b border-gray-400 bg-${victoryData.color}-300`}>{victoryData.title}</h1>
+                    <h1 className={`p-2 text-2xl rounded-xl border-b border-gray-400`} style={{backgroundColor: parseColor()}}>{victoryData.title}</h1>
                     <p className="h-36 pl-6 py-2 text-xl overflow-y-auto">{victoryData.description}</p>
                 </div>
                 <div className="flex justify-between items-center p-2">

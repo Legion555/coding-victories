@@ -26,15 +26,34 @@ export default function VictoryCard({victoryData}) {
         }).catch(err => console.log(err))
     }
 
+    const parseColor = () => {
+        let color;
+        switch (victoryData.color) {
+            case 'blue':
+                color = 'rgb(147,197,253)';
+                break;
+            case 'green':
+                color = 'rgb(112,231,183)';
+                break;
+            case 'red':
+                color = 'rgb(252,165,165)';
+                break;
+            case 'yellow':
+                color = 'rgb(252,211,79)';
+                break;
+            default:
+                break;
+        }
+        return color;
+    }
+
     return (
         <div className="victory-card w-80 mx-auto my-16 relative
             transform hover:scale-105 transition ease-out duration-700 animate-fadeIn" key={victoryData._id}>
             {view === 'default' &&
                 <div className="relative">
-                    <div className={`w-full h-full absolute top-0 left-0 rounded shadow bg-${victoryData.color}-300
-                        transform rotate-6`} />
-                    <div className={`w-full h-full absolute top-0 left-0 rounded shadow bg-${victoryData.color}-600
-                        transform -rotate-6`} />
+                    <div className={`w-full h-full absolute top-0 left-0 rounded shadow transform rotate-6`} style={{backgroundColor: victoryData.color}} />
+                    <div className={`w-full h-full absolute top-0 left-0 rounded shadow transform -rotate-6`} style={{backgroundColor: parseColor()}} />
                     <div className="w-full h-full p-2 flex flex-col justify-between relative rounded shadow bg-gray-100">
                         <div className="mb-4">
                             <h1 className="text-xl">{victoryData.title}</h1>

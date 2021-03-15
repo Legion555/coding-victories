@@ -10,6 +10,16 @@ module.exports = {
         '320': '320px',
         '500': '500px'
       },
+      backgroundColor: {
+        'blueLight': 'rgba(147,197,253)',
+        'blueDark': 'rgba(38,100,235)',
+        'greenLight': 'rgba(112,231,183)',
+        'greenDark': 'rgba(5,150,105)',
+        'redLight': 'rgba(252,165,165)',
+        'redDark': 'rgba(220,38,38)',
+        'yellowLight': 'rgba(252,211,79)',
+        'yellowDark': 'rgba(217,119,8)'
+      },
       animation: {
         lighthouse: 'lighthouse 5s ease-in-out infinite',
         fadeIn: 'fadeIn 0.5s ease-in forwards'

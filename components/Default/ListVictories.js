@@ -10,12 +10,6 @@ import VictoryCard from './VictoryCard';
 export default function ListVictories() {
     const victories = useSelector(state => state.victories);
 
-    const colorGen = () => {
-        let options = ['yellow', 'blue', 'green', 'red', 'purple'];
-        let choice = options[Math.floor(Math.random() * 4)];
-        return choice;
-    }
-
     return (
         <div className="w-full">
             <div className="w-full md:w-6/12 mx-auto flex justify-center items-center">
@@ -25,7 +19,7 @@ export default function ListVictories() {
             </div>
             <div className="flex justify-evenly flex-wrap p-4">
                 {victories.map(victory => 
-                    <VictoryCard key={victory._id} victoryData={victory} color={colorGen()} />
+                    <VictoryCard key={victory._id} victoryData={victory} />
                 )}
             </div>
         </div>
