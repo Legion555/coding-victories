@@ -59,12 +59,15 @@ export default function VictoryCard({victoryData}) {
     }
     
     const evalLike = () => {
-        userData.likes.forEach(like => {
-            if(like._id === victoryData._id) {
-                return setLikeStatus(true);
-            }
-            return null;
-        })
+        if (userData) {
+            userData.likes.forEach(like => {
+                if(like._id === victoryData._id) {
+                    return setLikeStatus(true);
+                }
+                return null;
+            })
+        }
+        return null;
     }
 
     const parseColor = () => {
@@ -105,7 +108,7 @@ export default function VictoryCard({victoryData}) {
                     <p>{victoryData.likes && likes}</p>
                     <AiFillHeart className={`text-xl cursor-pointer hover:text-red-800
                         ${likeStatus ? 'text-red-800' : 'text-red-300' }`}
-                        onClick={toggleLike} />
+                        onClick={userData && toggleLike} />
                 </div>
             </div>
         </div>
