@@ -16,10 +16,14 @@ export default function Index({setViewMain}) {
             {/* Hero */}
             <div className="authentication w-full md:w-7/12 p-8 flex justify-center items-center relative select-none">
                 <div className="hidden md:block">
-                    <VictoryCard victoryData={victories[0]} offset={'top-1/4 left-4'} animationDur={'4s'} />
-                    <VictoryCard victoryData={victories[1]} offset={'top-4 right-1/4'} animationDur={'3s'} />
-                    <VictoryCard victoryData={victories[2]} offset={'top-3/4 left-2/4'} animationDur={'7s'} />
-                    <VictoryCard victoryData={victories[3]} offset={'bottom-16 left-12'} animationDur={'5s'} />
+                    {victories &&
+                    <>
+                        <VictoryCard victoryData={victories[0]} offset={'top-1/4 left-4'} animationDur={'4s'} />
+                        <VictoryCard victoryData={victories[1]} offset={'top-4 right-1/4'} animationDur={'3s'} />
+                        <VictoryCard victoryData={victories[2]} offset={'top-3/4 left-2/4'} animationDur={'7s'} />
+                        <VictoryCard victoryData={victories[3]} offset={'bottom-16 left-12'} animationDur={'5s'} />
+                    </>
+                    }
                 </div>
                 <div className="w-max h-max px-4 py-8 flex items-center text-center relative">
                     <div className="w-full h-full bg-blue-400 absolute top-0 left-0
