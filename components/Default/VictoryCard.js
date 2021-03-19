@@ -94,23 +94,43 @@ export default function VictoryCard({victoryData}) {
     return (
         <div className="w-10/12 md:w-5/12 lg:w-4/12 xl:w-3/12 h-64 m-4
             relative rounded-xl shadow text-gray-800">
-            <div className={`w-full h-full absolute top-2 left-2 rounded-xl shadow`} style={{backgroundColor: victoryData.color}} />
-            <div className="w-full h-full relative flex flex-col justify-between rounded-xl bg-gray-100">
-                <div>
-                    <h1 className={`p-2 text-2xl rounded-xl border-b border-gray-400`} style={{backgroundColor: parseColor()}}>{victoryData.title}</h1>
-                    <p className="h-36 pl-6 py-2 text-xl overflow-y-auto">{victoryData.description}</p>
-                </div>
-                <div className="flex justify-between items-center p-2">
-                    <Link href="/u/[id]" as={`/u/${victoryData.authorId}`}><a>@{victoryData.author}</a></Link>
-                    <p>{Date(victoryData.date_created).slice(0,16)}</p>
-                </div>
-                <div className="w-max absolute bottom-2 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-                    <p>{victoryData.likes && likes}</p>
-                    <AiFillHeart className={`text-xl cursor-pointer hover:text-red-800
-                        ${likeStatus ? 'text-red-800' : 'text-red-300' }`}
-                        onClick={userData && toggleLike} />
-                </div>
-            </div>
+                {victoryData ?
+                <>
+                    <div className={`w-full h-full absolute top-2 left-2 rounded-xl shadow`} style={{backgroundColor: victoryData.color}} />
+                    <div className="w-full h-full relative flex flex-col justify-between rounded-xl bg-gray-100">
+                        <div>
+                            <h1 className={`p-2 text-2xl rounded-xl border-b border-gray-400`} style={{backgroundColor: parseColor()}}>{victoryData.title}</h1>
+                            <p className="h-36 pl-6 py-2 text-xl overflow-y-auto">{victoryData.description}</p>
+                        </div>
+                        <div className="flex justify-between items-center p-2">
+                            <Link href="/u/[id]" as={`/u/${victoryData.authorId}`}><a>@{victoryData.author}</a></Link>
+                            <p>{Date(victoryData.date_created).slice(0,16)}</p>
+                        </div>
+                        <div className="w-max absolute bottom-2 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+                            <p>{victoryData.likes && likes}</p>
+                            <AiFillHeart className={`text-xl cursor-pointer hover:text-red-800
+                                ${likeStatus ? 'text-red-800' : 'text-red-300' }`}
+                                onClick={userData && toggleLike} />
+                        </div>
+                    </div>
+                </>
+                :
+                <>
+                    <div className="w-full h-full relative flex flex-col justify-between rounded-xl bg-gray-100 animate-pulse">
+                        <div>
+                            <h1 className='w-full h-8 text-2xl bg-gray-400 animate-pulse'></h1>
+                            <p className="h-4 mt-4 mx-4 bg-gray-400 text-xl overflow-y-auto"></p>
+                            <p className="h-4 mt-4 mx-4 bg-gray-400 text-xl overflow-y-auto"></p>
+                            <p className="h-4 mt-4 mx-4 bg-gray-400 text-xl overflow-y-auto"></p>
+                        </div>
+                        <div className="flex justify-between items-center p-2">
+                            <a className="w-8 h-4 bg-gray-400"></a>
+                            <p className="w-16 h-4 bg-gray-400"></p>
+                        </div>
+                    </div>
+                </>
+                }
+            
         </div>
     )
 }
