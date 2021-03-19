@@ -18,7 +18,7 @@ export default function ListVictories() {
                 <div className="w-full h-1 bg-gray-400" />
             </div>
             <div className="flex justify-evenly flex-wrap p-4">
-                {!victories ?
+                {victories ?
                     victories.map(victory => 
                         <VictoryCard key={victory._id} victoryData={victory} />
                     )
