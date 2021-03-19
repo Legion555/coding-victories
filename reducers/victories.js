@@ -1,4 +1,4 @@
-const victoriesReducer = (state = [], action) => {
+const victoriesReducer = (state = null, action) => {
     switch (action.type) {
         case 'UPDATE_VICTORIES':
             return action.payload;

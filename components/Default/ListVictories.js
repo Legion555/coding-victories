@@ -9,6 +9,7 @@ import VictoryCard from './VictoryCard';
 
 export default function ListVictories() {
     const victories = useSelector(state => state.victories);
+    console.log(victories)
 
     return (
         <div className="w-full">
