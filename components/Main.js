@@ -9,7 +9,7 @@ import Profile from "./Profile/Profile";
 
 
 export default function Home({setViewMain}) {
-    const userData = useSelector(state => state.userData);
+    const userData = useSelector(state => state.userData.value);
     
     const [view, setView] = useState('default');
 

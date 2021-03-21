@@ -2,14 +2,16 @@ import axios from 'axios';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 //redux
-import {updateUserData} from '../../actions';
+import {updateUserData} from '../../slices/userDataSlice';
 import {useSelector, useDispatch} from 'react-redux';
+//functions
+import { parseDate } from '../Functions/parseDate';
 //icons
 import {AiFillHeart} from 'react-icons/ai';
 
 export default function VictoryCard({victoryData}) {
     const dispatch = useDispatch();
-    const userData = useSelector(state => state.userData);
+    const userData = useSelector(state => state.userData.value);
 
     const [likes, setLikes] = useState(victoryData.likes);
     const [likeStatus, setLikeStatus] = useState(false);
@@ -92,8 +94,8 @@ export default function VictoryCard({victoryData}) {
     }
 
     return (
-        <div className="w-10/12 md:w-5/12 lg:w-4/12 xl:w-3/12 h-64 m-4
-            relative rounded-xl shadow text-gray-800">
+        <div className="w-10/12 md:w-5/12 lg:w-4/12 xl:w-3/12 h-64 m-4 relative rounded-xl shadow text-gray-800
+            transform hover:scale-105 transition ease-out duration-500 animate-fadeIn">
             <div className={`w-full h-full absolute top-2 left-2 rounded-xl shadow`} style={{backgroundColor: victoryData.color}} />
             <div className="w-full h-full relative flex flex-col justify-between rounded-xl bg-gray-100">
                 <div>
@@ -102,7 +104,7 @@ export default function VictoryCard({victoryData}) {
                 </div>
                 <div className="flex justify-between items-center p-2">
                     <Link href="/u/[id]" as={`/u/${victoryData.authorId}`}><a>@{victoryData.author}</a></Link>
-                    <p>{Date(victoryData.date_created).slice(0,16)}</p>
+                    <p>{parseDate(victoryData.date_created)}</p>
                 </div>
                 <div className="w-max absolute bottom-2 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
                     <p>{victoryData.likes && likes}</p>

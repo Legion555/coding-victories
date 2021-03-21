@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useState } from "react"
 //redux
-import {updateUserData, updateIsLoggedIn} from '../../actions'
+import {updateUserData} from '../../slices/userDataSlice'
 import {useDispatch} from 'react-redux'
 
 
@@ -48,7 +48,6 @@ export default function Login({setView}) {
                     localStorage.setItem('loginPassword', password);
                     //set userData redux
                     dispatch(updateUserData(result.data.userData))
-                    dispatch(updateIsLoggedIn(true))
                     break;
             }
         }).catch(err => console.log(err))

@@ -7,8 +7,7 @@ import ListVictories from './ListVictories';
 
 
 export default function Index({setView, setViewMain}) {
-    const isLoggedIn = useSelector(state => state.isLoggedIn);
-    const userData = useSelector(state => state.userData);
+    const userData = useSelector(state => state.userData.value);
 
     return (
         <div className="w-full h-screen">
@@ -21,8 +20,8 @@ export default function Index({setView, setViewMain}) {
                         <div className="w-full h-4 md:h-8 relative top-16 md:top-32 bg-green-800" />
                         <h1 className="relative text-3xl md:text-6xl text-yellow-200">Victories are meant<br/>to be celebrated</h1>
                     </div>
-                    <button className="p-4 text-3xl rounded shadow text-gray-100 bg-yellow-600"
-                        onClick={isLoggedIn ? () => setView('profile')  : () => setViewMain(false) } >Share yours today</button>
+                    <button className="p-4 text-3xl rounded shadow text-gray-100 bg-yellow-600 hover:text-yellow-600 hover:bg-gray-200 transition-all ease-in duration-150"
+                        onClick={userData ? () => setView('profile')  : () => setViewMain(false) } >Share yours today</button>
                 </div>
             </div>
             <ListVictories />

@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.5.0",
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
@@ -19,8 +20,10 @@
     "react-icons": "^4.2.0",
     "react-masonry-css": "^1.0.14",
     "react-redux": "^7.2.2",
+    "react-spring": "^8.0.27",
     "react-textarea-autosize": "^8.3.2",
     "redux": "^4.0.5",
+    "redux-persist": "^6.0.0",
     "uid": "^2.0.0"
   },
   "devDependencies": {

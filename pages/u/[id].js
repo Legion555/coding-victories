@@ -2,6 +2,8 @@ import {useState, useEffect} from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+//components
+import Nav from '../../components/Nav';
 
 
 
@@ -27,6 +29,8 @@ export default function Home() {
         <title>{userData && userData.username}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Nav />
 
       <h1 className="text-center text-4xl">{userData && userData.username}</h1>
 

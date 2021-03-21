@@ -4,12 +4,14 @@ import axios from 'axios'
 import TextareaAutosize from 'react-textarea-autosize';
 //redux
 import {useSelector, useDispatch} from 'react-redux'
-import {updateUserData} from '../../actions'
+import {updateUserData} from '../../slices/userDataSlice'
+//functions
+import {parseLightColor} from '../Functions/parseLightColor';
 
 
 export default function CreateVictory({setFunctionView}) {
     const dispatch = useDispatch();
-    const userData = useSelector(state => state.userData);
+    const userData = useSelector(state => state.userData.value);
 
     const [title, setTitle] = useState('');
     const [titleError, setTitleError] = useState(null);
@@ -47,12 +49,12 @@ export default function CreateVictory({setFunctionView}) {
     }
 
     return (
-        <div className="w-full h-screen flex justify-center items-center fixed top-0 left-0 z-40">
+        <div className="w-full h-screen flex justify-center items-center fixed top-0 left-0 z-50 duration-300 animate-fadeIn">
             <div className="w-full h-full bg-gray-800 bg-opacity-50" onClick={() => setFunctionView('')} />
             <div className="w-full md:w-500 absolute rounded-xl bg-gray-100 shadow">
                 <form>
-                    <input className={`w-full mb-4 p-4 text-xl bg-${color}-200 rounded-xl focus:outline-none
-                        ${titleError !== null && 'border-2 border-red-500'}`}
+                    <input className={`w-full mb-4 p-4 text-xl rounded-xl focus:outline-none
+                        ${titleError !== null && 'border-2 border-red-500'}`} style={{backgroundColor: parseLightColor(color)}}
                         type='text' placeholder={titleError === null ? "Title" : titleError}
                         value={title} onChange={(e) => setTitle(e.target.value)} autoFocus />
                     

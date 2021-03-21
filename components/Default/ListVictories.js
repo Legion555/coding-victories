@@ -8,8 +8,7 @@ import VictoryCard from './VictoryCard';
 
 
 export default function ListVictories() {
-    const victories = useSelector(state => state.victories);
-    console.log(victories)
+    const victories = useSelector(state => state.victories.value);
 
     return (
         <div className="w-full">
@@ -20,7 +19,7 @@ export default function ListVictories() {
             </div>
             <div className="flex justify-evenly flex-wrap p-4">
                 {victories ?
-                    victories.map(victory => 
+                    victories.slice(0).reverse().map(victory => 
                         <VictoryCard key={victory._id} victoryData={victory} />
                     )
                 :

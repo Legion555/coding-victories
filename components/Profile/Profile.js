@@ -8,7 +8,7 @@ import CreateVictory from "./CreateVictory";
 
 
 export default function DefaultView() {
-    const userData = useSelector(state => state.userData);
+    const userData = useSelector(state => state.userData.value);
 
     const [functionView, setFunctionView] = useState('');
 
